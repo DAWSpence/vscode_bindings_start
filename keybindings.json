@@ -25,6 +25,17 @@
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
+  {
+    "key": "shift+q",
+    "command": "workbench.action.createTerminalEditor",
+    "when": "terminalProcessSupported && vim.mode == 'Normal'"
+  },
+  {
+     "key": "ctrl+shift+q",
+     "command": "workbench.action.terminal.killEditor",
+     "when": "terminalHasBeenCreated || terminalProcessSupported"
+  },
+
   // FILE TREE
   {
     "command": "workbench.action.toggleSidebarVisibility",

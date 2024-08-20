@@ -1,40 +1,184 @@
-// Place your key bindings in this file to override the defaults
 [
-  // NAVIGATION
+  //Unset to prevent conflicts
   {
-    "key": "ctrl+shift+a",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
+    "key": "ctrl+shift+pageup",
+    "command": "-workbench.action.moveEditorLeftInGroup"
   },
+
   {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
+    "key": "ctrl+shift+pagedown",
+    "command": "-workbench.action.moveEditorRightInGroup"
   },
+
+  {
+    "key": "ctrl+shift+pagedown",
+    "command": "-workbench.action.moveEditorRightInGroup"
+  },
+
+  {
+    "key": "ctrl+shift+p",
+    "command": "-workbench.action.showCommands"
+  },
+
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenView"
+  },
+
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+
+  {
+    "key": "ctrl+q",
+    "command": "-extension.vim_winCtrlQ",
+    "when": "editorTextFocus && vim.active && vim.use<C-q> && !inDebugRepl"
+  },
+
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenNavigateNextInViewPicker",
+    "when": "inQuickOpen && inViewsPicker"
+  },
+
+
+  {
+    "key": "ctrl+f4",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+  },
+  
+  {
+    "key": "ctrl+f4",
+    "command": "-workbench.action.closeActiveEditor"
+  },
+  
+  {
+    "key": "ctrl+f4",
+    "command": "-workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
+  },
+
+  {
+    "key": "ctrl+p",
+    "command": "-workbench.action.quickOpen"
+  },
+
+
+
+
+
+
+
+    //GENERAL
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.showCommands"
+  },
+
+  {
+      "key": "shift+n",
+      "command": "workbench.action.newWindow",
+      "when": "!explorerViewletFocus"
+  },
+ 
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+
+
+
+
+
+
+
+
+    // NAVIGATION
   {
     "key": "ctrl+shift+j",
     "command": "workbench.action.togglePanel"
   },
+
   {
-    "key": "ctrl+shift+n",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalFocus"
+    "key": "alt+n",
+    "command": "workbench.action.moveEditorLeftInGroup"
   },
+
   {
-    "key": "ctrl+shift+w",
+    "key": "alt+m",
+    "command": "workbench.action.moveEditorRightInGroup"
+  },
+
+
+
+
+
+
+
+    //TERMINAL
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && !terminalEditorFocus"
+  },
+
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && !terminalEditorFocus"
+  },
+
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus && !terminalEditorFocus"
+  },
+
+  {
+    "key": "ctrl+q",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
+
   {
-    "key": "shift+q",
+      "key": "ctrl+q",
+      "command": "workbench.action.terminal.killEditor",
+      "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+  },
+  
+  {
+    "key": "ctrl+shift+z",
     "command": "workbench.action.createTerminalEditor",
-    "when": "terminalProcessSupported && vim.mode == 'Normal'"
+    "when": "terminalProcessSupported"
   },
+
   {
-     "key": "ctrl+shift+q",
-     "command": "workbench.action.terminal.killEditor",
-     "when": "terminalHasBeenCreated || terminalProcessSupported"
+    "key": "ctrl+z",
+    "command": "workbench.action.terminal.newInActiveWorkspace",
+    "when": "terminalProcessSupported"
   },
+
+
+
+
 
   // FILE TREE
   {
@@ -47,8 +191,18 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "n",
+    "key": "a",
     "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "filesExplorer.copy",
+    "key": "c",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "filesExplorer.paste",
+    "key": "p",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
@@ -57,28 +211,14 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus"
-  },
-  {
-    "key": "shift+n",
-    "command": "workbench.action.newWindow",
-    "when": "!explorerViewletFocus"
-  },
-  {
     "command": "deleteFile",
     "key": "d",
     "when": "filesExplorerFocus && !inputFocus"
   },
-
-  // EXTRA
   {
-    "key": "ctrl+shift+5",
-    "command": "editor.emmet.action.matchTag"
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
   },
-  {
-    "key": "ctrl+z",
-    "command": "workbench.action.toggleZenMode"
-  }
+
 ]

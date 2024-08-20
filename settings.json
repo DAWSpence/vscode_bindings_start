@@ -2,23 +2,36 @@
   "workbench.sideBar.location": "right",
   "workbench.colorTheme": "Tokyo Night",
   "editor.minimap.enabled": false,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.suggest.insertMode": "replace",
   "editor.linkedEditing": true,
   "window.zoomLevel": 2,
-  "launch": {},
-  "[json]": {},
-  "breadcrumbs.enabled": false,
-  "workbench.icontheme": "material-icon-theme",
   "update.showReleaseNotes": false,
   "editor.lineNumbers": "relative",
   "telemetry.telemetryLevel": "off",
+  "workbench.startupEditor": "none",
+  "editor.stickyScroll.enabled": true,
+  "editor.wordWrap": "bounded",
 
 
-
-
+//==VIM==
+//general settings
   "vim.leader": "<Space>",
   "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(180, 180, 180, 0.4)", 
+  "vim.highlightedyank.textColor": "white",
+  "extensions.experimental.affinity": {
+      "vscodevim.vim": 1
+    },
+
+//==VIM PLUGINS==
+"vim.easymotion": true,
+"vim.camelCaseMotion.enable": true,
+"vim.sneak": true,
+
+
+
   "vim.normalModeKeyBindingsNonRecursive": [
     // NAVIGATION
     // switch b/w buffers
@@ -64,11 +77,11 @@
     },
     { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
     { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
-    { "before": ["leader", "a"], "commands": ["fuzzySearch.activeTextEditor"] },
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
-    }
+    },
+    { "before": ["leader", "a"], "commands": ["fuzzySearch.activeTextEditor"] },
   ],
   "vim.visualModeKeyBindings": [
     // Stay in visual mode while indenting
@@ -81,8 +94,51 @@
     { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
   ],
 
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+
+
+//
+
+
+"latex-workshop.latex.autoBuild.run" :"never",
+    "latex-workshop.latex.build.forceRecipeUsage": false,
+    "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": true,
+    "latex-workshop.latex.outDir": "./output/",
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.clean.method" : "glob",
+    "latex-workshop.latex.clean.fileTypes": [ "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.fls", "*.log", "*.fdb_latexmk", "*.snm", "*.synctex", "*.synctex.gz", "*.nav" ],
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
+    "latex-workshop.latex.clean.args": ["-outdir=%OUTDIR%", "-C", "%TEX%"],
+    "latex-workshop.message.log.show": true,
+    "latex-workshop.message.badbox.show": true,
+    "latex-workshop.message.warning.show": true,
+    "latex-workshop.message.error.show": true,
+
+
+
+
+    "latex-workshop.latex.tools": [
+        {
+          "name": "latexmk",
+          "command": "latexmk",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+    ],
+    "cmake.showOptionsMovedNotification": false,
+    "cmake.pinnedCommands": [
+      "workbench.action.tasks.configureTaskRunner",
+      "workbench.action.tasks.runTask"
+    ],
+    "workbench.editorAssociations": {
+      "{git,gitlens}:/**/*.{md,csv,svg}": "default"
+    },
 
 }

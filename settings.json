@@ -1,144 +1,234 @@
 {
-  "workbench.sideBar.location": "right",
-  "workbench.colorTheme": "Tokyo Night",
+  //==COMMON==
+  //general settings
+
+  //editor
+  "editor.fontSize": 16,
+	"editor.guides.bracketPairs": false,
+  "editor.find.addExtraSpaceOnTop": false,
+  "editor.mouseWheelZoom": true,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "off",
+  "editor.stickyScroll.enabled": true,
+  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.formatOnSave": false,
   "editor.suggest.insertMode": "replace",
   "editor.linkedEditing": true,
-  "window.zoomLevel": 2,
-  "update.showReleaseNotes": false,
-  "editor.lineNumbers": "relative",
-  "telemetry.telemetryLevel": "off",
+  "editor.fontLigatures": false,
+  "editor.quickSuggestionsDelay": 0,
+
+
+
+
+  //explorer
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+
+  //workbench
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "editor.stickyScroll.enabled": true,
-  "editor.wordWrap": "bounded",
+  "workbench.tree.indent": 10,
+  "workbench.editor.tabActionLocation": "right",
+
+  //extensions
+  "extensions.ignoreRecommendations": true,
+  "extensions.closeExtensionDetailsOnViewChange": true,
+
+  //window
+  "window.zoomLevel": 2,
 
 
-//==VIM==
-//general settings
-  "vim.leader": "<Space>",
+
+
+
+//=========================================================================
+//Telemetry
+  "telemetry.enableCrashReporter": false,
+  "telemetry.telemetryLevel": "false",
+  "telemetry.enableTelemetry": false,
+  "editor.experimental.treeSitterTelemetry": false,
+  "python.analysis.reportExtraTelemetry": false,
+
+
+
+
+
+  //=========================================================================
+  //EXTENSIONS
+
+
+  //==VIM==
+  //general settings
+  "vim.leader": "<space>",
   "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.enableNeovim": false,
   "vim.highlightedyank.enable": true,
+  "vim.cursorStylePerMode.insert": "line",
   "vim.highlightedyank.color": "rgba(180, 180, 180, 0.4)", 
   "vim.highlightedyank.textColor": "white",
+
+  "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>":  false,
+      "<C-p>": false,
+      "<C-z>": false,
+    },
+
   "extensions.experimental.affinity": {
       "vscodevim.vim": 1
     },
 
-//==VIM PLUGINS==
-"vim.easymotion": true,
-"vim.camelCaseMotion.enable": true,
-"vim.sneak": true,
+  //plugins
+  "vim.easymotion": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.sneak": true,
 
 
-
+  //keybindings
   "vim.normalModeKeyBindingsNonRecursive": [
-    // NAVIGATION
-    // switch b/w buffers
-    { "before": ["<S-h>"], "commands": [":bprevious"] },
-    { "before": ["<S-l>"], "commands": [":bnext"] },
+      // switch b/w buffers
+      { 
+        "before": ["<S-h>"],
+        "commands": [":bprevious"] 
+      },
 
-    // splits
-    { "before": ["leader", "v"], "commands": [":vsplit"] },
-    { "before": ["leader", "s"], "commands": [":split"] },
+      {
+       "before": ["<S-l>"],
+       "commands": [":bnext"] 
+      },
 
-    // panes
-    {
-      "before": ["leader", "h"],
-      "commands": ["workbench.action.focusLeftGroup"]
-    },
-    {
-      "before": ["leader", "j"],
-      "commands": ["workbench.action.focusBelowGroup"]
-    },
-    {
-      "before": ["leader", "k"],
-      "commands": ["workbench.action.focusAboveGroup"]
-    },
-    {
-      "before": ["leader", "l"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
-    // NICE TO HAVE
-    { "before": ["leader", "w"], "commands": [":w!"] },
-    { "before": ["leader", "q"], "commands": [":q!"] },
-    { "before": ["leader", "x"], "commands": [":x!"] },
-    {
-      "before": ["[", "d"],
-      "commands": ["editor.action.marker.prev"]
-    },
-    {
-      "before": ["]", "d"],
-      "commands": ["editor.action.marker.next"]
-    },
-    {
-      "before": ["<leader>", "c", "a"],
-      "commands": ["editor.action.quickFix"]
-    },
-    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
-    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
-    {
-      "before": ["g", "h"],
-      "commands": ["editor.action.showDefinitionPreviewHover"]
-    },
-    { "before": ["leader", "a"], "commands": ["fuzzySearch.activeTextEditor"] },
-  ],
-  "vim.visualModeKeyBindings": [
-    // Stay in visual mode while indenting
-    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
-    { "before": [">"], "commands": ["editor.action.indentLines"] },
-    // Move selected lines while staying in visual mode
-    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
-    // toggle comment selection
-    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
-  ],
+      // splits
+      { 
+        "before": ["leader", "v"],
+        "commands": [":vsplit"] 
+      },
+
+      { 
+        "before": ["leader", "s"],
+        "commands": [":split"] 
+      },
 
 
+      // panes
+      {
+        "before": ["leader", "h"],
+        "commands": ["workbench.action.focusLeftGroup"]
+      },
 
-//
+      {
+        "before": ["leader", "j"],
+        "commands": ["workbench.action.focusBelowGroup"]
+      },
+
+      {
+        "before": ["leader", "k"],
+        "commands": ["workbench.action.focusAboveGroup"]
+      },
+
+      {
+        "before": ["leader", "l"],
+        "commands": ["workbench.action.focusRightGroup"]
+      },
 
 
-"latex-workshop.latex.autoBuild.run" :"never",
-    "latex-workshop.latex.build.forceRecipeUsage": false,
-    "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": true,
-    "latex-workshop.latex.outDir": "./output/",
-    "latex-workshop.latex.clean.subfolder.enabled": true,
-    "latex-workshop.latex.autoClean.run": "onFailed",
-    "latex-workshop.latex.clean.method" : "glob",
-    "latex-workshop.latex.clean.fileTypes": [ "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.fls", "*.log", "*.fdb_latexmk", "*.snm", "*.synctex", "*.synctex.gz", "*.nav" ],
-    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
-    "latex-workshop.latex.clean.args": ["-outdir=%OUTDIR%", "-C", "%TEX%"],
-    "latex-workshop.message.log.show": true,
-    "latex-workshop.message.badbox.show": true,
-    "latex-workshop.message.warning.show": true,
-    "latex-workshop.message.error.show": true,
+      //extras
+      { 
+        "before": ["leader", "w"],
+        "commands": [":w!"] 
+      },
 
+      { 
+        "before": ["leader", "q"],
+        "commands": [":q!"] 
+      },
 
+      { 
+        "before": ["leader", "x"],
+        "commands": [":x!"] 
+      },
 
+      {
+        "before": ["[", "d"],
+        "commands": ["editor.action.marker.prev"]
+      },
 
-    "latex-workshop.latex.tools": [
-        {
-          "name": "latexmk",
-          "command": "latexmk",
-          "args": [
-            "-synctex=1",
-            "-interaction=nonstopmode",
-            "-file-line-error",
-            "-pdf",
-            "-outdir=%OUTDIR%",
-            "%DOC%"
-          ],
-          "env": {}
-        },
+      {
+        "before": ["]", "d"],
+        "commands": ["editor.action.marker.next"]
+      },
+
+      {
+        "before": ["<leader>", "c", "a"],
+        "commands": ["editor.action.quickFix"]
+      },
+
+      { 
+        "before": ["leader", "f"],
+        "commands": ["workbench.action.quickOpen"] 
+      },
+
+      {
+        "before": ["leader", "p"],
+        "commands": ["editor.action.formatDocument"] 
+      },
+
+      {
+        "before": ["g", "h"],
+        "commands": ["editor.action.showDefinitionPreviewHover"]
+      },
     ],
-    "cmake.showOptionsMovedNotification": false,
-    "cmake.pinnedCommands": [
-      "workbench.action.tasks.configureTaskRunner",
-      "workbench.action.tasks.runTask"
+
+
+    "vim.visualModeKeyBindings": [
+      // Stay in visual mode while indenting
+      {
+        "before": ["<"],
+        "commands": ["editor.action.outdentLines"] 
+      },
+
+      { 
+        "before": [">"],
+        "commands": ["editor.action.indentLines"] 
+      },
+
+      // Move selected lines while staying in visual mode
+      { 
+        "before": ["J"],
+        "commands": ["editor.action.moveLinesDownAction"] 
+      },
+
+      { 
+        "before": ["K"],
+        "commands": ["editor.action.moveLinesUpAction"] 
+      },
+
+      // toggle comment selection
+      { 
+        "before": ["leader", "c"],
+        "commands": ["editor.action.commentLine"] 
+      }
+
     ],
-    "workbench.editorAssociations": {
-      "{git,gitlens}:/**/*.{md,csv,svg}": "default"
-    },
+
+    // "vim.insertModeKeyBindings": [],
+
+
+
+  //==NEOVIM PLUGINS==
+  //general settings
+
+
+
+
+  //dont add anything below this line
+  //==APPENDED SETTINGS==
+
 
 }

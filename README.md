@@ -1,1 +1,1 @@
-# vscode_bindings
+# vscode_config
